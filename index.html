@@ -74,5 +74,29 @@ footer{background:#2f281f;color:#dcd3c8;padding:24px 18px 90px;font-size:11px;li
 <nav class="bottom">
 <a href="#home"><b>⌂</b>홈</a><a href="#services" class="active"><b>▦</b>서비스</a><a href="#cases"><b>▧</b>시공사례</a><a href="#contact"><b>☎</b>견적문의</a>
 </nav>
+
+<div id="mobileMenu" style="display:none;position:fixed;top:78px;right:max(calc((100vw - 520px)/2 + 10px),10px);z-index:50;background:#fff;border:1px solid #eee6dc;border-radius:12px;box-shadow:0 8px 25px #0002;overflow:hidden;min-width:180px">
+<a href="#home" style="display:block;padding:14px 18px;color:#2d261f;text-decoration:none">홈</a>
+<a href="#services" style="display:block;padding:14px 18px;color:#2d261f;text-decoration:none">시공 서비스</a>
+<a href="#cases" style="display:block;padding:14px 18px;color:#2d261f;text-decoration:none">시공사례</a>
+<a href="#contact" style="display:block;padding:14px 18px;color:#2d261f;text-decoration:none">견적문의</a>
+</div>
+<script>
+(function(){
+  var btn=document.querySelector('.menu'), panel=document.getElementById('mobileMenu');
+  if(!btn||!panel)return;
+  btn.type='button';
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    panel.style.display=panel.style.display==='none'?'block':'none';
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){panel.style.display='none';});
+  });
+  document.addEventListener('click',function(e){
+    if(!panel.contains(e.target)&&!btn.contains(e.target)) panel.style.display='none';
+  });
+})();
+</script>
 </body>
 </html>
