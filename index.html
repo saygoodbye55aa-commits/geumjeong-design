@@ -4,21 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>금정디자인 | 부산·경남 인테리어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{
+  --gold:#9a7438;
+  --gold-soft:#c4a36a;
+  --cream:#f7f3ec;
+  --cream-2:#fffdf8;
+  --ink:#2a241c;
+  --mute:#7a7268;
+  --line:#e6dccf;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:#eee;
-  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR","Malgun Gothic",sans-serif;
-  color:#171717
+  background:#e8e2d8;
+  font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+  color:var(--ink);
+  font-weight:400;
 }
 a{text-decoration:none;color:inherit}
 
 .page{
   max-width:520px;
   margin:auto;
-  background:#fff;
+  background:var(--cream-2);
   min-height:100vh;
   padding-bottom:82px
 }
@@ -27,8 +40,9 @@ header{
   position:sticky;
   top:0;
   z-index:20;
-  background:#fffef9;
-  border-bottom:1px solid #efe8dc;
+  background:rgba(255,253,248,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
   padding:12px 18px;
   display:flex;
   align-items:center;
@@ -48,92 +62,102 @@ header{
   align-items:center;
   justify-content:center;
   gap:6px;
-  margin-bottom:4px
+  margin-bottom:5px
 }
 .logo-line:before,
 .logo-line:after{
   content:"";
   height:1px;
-  background:#b48742;
+  background:var(--gold);
   flex:1
 }
 .logo-dia{
   width:6px;
   height:6px;
-  border:1px solid #b48742;
+  border:1px solid var(--gold);
   transform:rotate(45deg)
 }
 .logo{
-  font-family:Georgia,"Noto Serif KR","Times New Roman",serif;
+  font-family:"Noto Serif KR",Georgia,serif;
   font-weight:500;
   font-size:22px;
-  letter-spacing:.08em;
-  color:#b48742
+  letter-spacing:.12em;
+  color:var(--gold)
 }
 .head-sub{
   font-size:10px;
-  color:#777;
-  margin-top:4px
+  color:var(--mute);
+  margin-top:5px;
+  letter-spacing:.02em;
+  font-weight:400
 }
 .menu{
-  font-size:28px;
+  font-size:26px;
   border:0;
   background:none;
-  cursor:pointer
+  cursor:pointer;
+  color:var(--ink)
 }
 
 .hero{
-  padding:36px 22px 32px;
-  background:linear-gradient(145deg,#f8f5ef,#fff)
+  padding:38px 22px 34px;
+  background:linear-gradient(180deg,#f3eee4 0%,#fffdf8 100%)
 }
 .badge{
   display:inline-block;
-  background:#171717;
-  color:#fff;
-  padding:8px 13px;
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  padding:7px 12px;
   border-radius:99px;
-  font-size:12px;
-  font-weight:700
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.04em
 }
 .hero h1{
-  font-size:39px;
-  line-height:1.08;
-  letter-spacing:-2px;
-  margin:18px 0 10px
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-size:34px;
+  font-weight:500;
+  line-height:1.25;
+  letter-spacing:-.02em;
+  margin:18px 0 12px
 }
-.hero h1 span{color:#b48742}
+.hero h1 span{color:var(--gold)}
 .hero p{
-  font-size:16px;
-  line-height:1.65;
-  color:#555
+  font-size:15px;
+  line-height:1.7;
+  color:var(--mute);
+  font-weight:400
 }
 .cta{
   display:flex;
-  gap:9px;
-  margin-top:22px
+  gap:8px;
+  margin-top:24px
 }
 .btn{
   flex:1;
   padding:14px 8px;
-  border-radius:12px;
+  border-radius:10px;
   text-align:center;
-  font-weight:800;
+  font-weight:500;
   font-size:14px
 }
-.btn.dark{background:#171717;color:#fff}
-.btn.gold{background:#b48742;color:#fff}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.gold{background:var(--gold);color:#fff}
 
-section{padding:30px 18px}
+section{padding:32px 18px}
 .eyebrow{
-  font-size:12px;
-  color:#b48742;
-  font-weight:900;
-  letter-spacing:1px
+  font-size:11px;
+  color:var(--gold);
+  font-weight:500;
+  letter-spacing:.14em
 }
 h2{
-  font-size:25px;
-  letter-spacing:-1.2px;
-  margin:6px 0 17px
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-size:23px;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:8px 0 18px
 }
 
 .services{
@@ -142,25 +166,28 @@ h2{
   gap:10px
 }
 .service{
-  border:1px solid #e9e5df;
-  border-radius:17px;
-  padding:19px 15px
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:16px;
+  padding:18px 14px
 }
 .service:last-child{grid-column:span 2}
-.ico{font-size:25px}
+.ico{font-size:22px}
 .service b{
   display:block;
-  font-size:17px;
+  font-size:16px;
+  font-weight:500;
   margin-top:8px
 }
 .service small{
   display:block;
-  color:#777;
+  color:var(--mute);
   margin-top:5px;
-  font-size:12px
+  font-size:12px;
+  font-weight:400
 }
 
-.portfolio{background:#f7f3ec}
+.portfolio{background:var(--cream)}
 .photo-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -169,9 +196,9 @@ h2{
 .photo-card{
   margin:0;
   background:#fff;
-  border-radius:15px;
+  border-radius:14px;
   overflow:hidden;
-  border:1px solid #e5dfd5
+  border:1px solid var(--line)
 }
 .photo-card img{
   display:block;
@@ -182,8 +209,8 @@ h2{
 .photo-card figcaption{
   padding:9px 11px;
   font-size:12px;
-  font-weight:800;
-  color:#555
+  font-weight:500;
+  color:var(--mute)
 }
 
 .trust{
@@ -192,42 +219,51 @@ h2{
   gap:10px
 }
 .trust div{
-  background:#fafafa;
+  background:#fff;
+  border:1px solid var(--line);
   border-radius:15px;
-  padding:18px 13px;
+  padding:18px 12px;
   text-align:center
 }
-.trust b{display:block;margin-top:7px}
-.trust small{color:#777}
+.trust b{display:block;margin-top:7px;font-weight:500}
+.trust small{color:var(--mute);font-weight:400}
 
 .contact{
   margin:0 18px 25px;
-  border-radius:22px;
-  background:#171717;
-  color:#fff;
-  padding:25px 20px
+  border-radius:20px;
+  background:#2a241c;
+  color:#f7f3ec;
+  padding:26px 20px
+}
+.contact .label{
+  font-size:12px;
+  letter-spacing:.08em;
+  color:var(--gold-soft)
 }
 .contact .num{
-  font-size:29px;
-  font-weight:900;
-  margin:9px 0
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-size:28px;
+  font-weight:500;
+  margin:10px 0 8px
 }
-.contact p{color:#ccc;font-size:13px}
+.contact p{color:#c9c0b4;font-size:13px;margin:0}
 .contact a{
   display:block;
-  background:#b48742;
+  background:var(--gold);
+  color:#fff;
   padding:14px;
-  border-radius:12px;
+  border-radius:10px;
   text-align:center;
-  font-weight:900;
-  margin-top:16px
+  font-weight:500;
+  margin-top:18px
 }
 
 footer{
   text-align:center;
-  color:#999;
+  color:#9a9186;
   font-size:11px;
-  padding:5px 20px 20px
+  padding:6px 20px 22px;
+  line-height:1.7
 }
 
 .bottom{
@@ -237,8 +273,8 @@ footer{
   transform:translateX(-50%);
   width:min(520px,100%);
   height:70px;
-  background:#fff;
-  border-top:1px solid #ddd;
+  background:#fffdf8;
+  border-top:1px solid var(--line);
   display:flex;
   z-index:30
 }
@@ -247,17 +283,19 @@ footer{
   text-align:center;
   padding-top:11px;
   font-size:11px;
-  font-weight:800
+  font-weight:500;
+  color:var(--mute)
 }
-.bottom b{display:block;font-size:21px}
-.bottom .call{background:#171717;color:#fff}
+.bottom b{display:block;font-size:18px;color:var(--ink);margin-bottom:2px}
+.bottom .call{background:var(--gold);color:#fff}
+.bottom .call b{color:#fff}
 
 .side-menu{
   display:none;
   position:fixed;
   inset:0;
   z-index:100;
-  background:rgba(0,0,0,.55)
+  background:rgba(42,36,28,.45)
 }
 .side-menu.open{display:block}
 .side-inner{
@@ -266,10 +304,9 @@ footer{
   top:0;
   height:100%;
   width:min(390px,88%);
-  background:#fff;
+  background:#fffdf8;
   padding:70px 20px 30px;
-  overflow:auto;
-  box-shadow:-8px 0 30px rgba(0,0,0,.2)
+  overflow:auto
 }
 .close-menu{
   position:absolute;
@@ -277,21 +314,22 @@ footer{
   top:15px;
   border:0;
   background:none;
-  font-size:38px;
-  line-height:1
+  font-size:36px;
+  line-height:1;
+  color:var(--ink)
 }
 .menu-logo{
-  font-family:Georgia,"Noto Serif KR","Times New Roman",serif;
+  font-family:"Noto Serif KR",Georgia,serif;
   font-weight:500;
-  font-size:28px;
-  letter-spacing:.08em;
-  color:#b48742
+  font-size:26px;
+  letter-spacing:.12em;
+  color:var(--gold)
 }
 .menu-sub{
   font-size:13px;
-  color:#777;
-  margin:7px 0 22px;
-  border-bottom:1px solid #eee;
+  color:var(--mute);
+  margin:8px 0 22px;
+  border-bottom:1px solid var(--line);
   padding-bottom:20px
 }
 .menu-info{
@@ -300,36 +338,34 @@ footer{
   gap:14px;
   padding:16px;
   margin:10px 0;
-  border-radius:16px
+  border-radius:14px;
+  background:#fff;
+  border:1px solid var(--line)
 }
-.menu-info .mi{font-size:27px}
-.menu-info b{display:block;font-size:18px}
+.menu-info .mi{font-size:22px}
+.menu-info b{display:block;font-size:16px;font-weight:500}
 .menu-info small{
   display:block;
-  color:#666;
+  color:var(--mute);
   margin-top:5px;
   font-size:13px
 }
-.address{background:#fff3f0}
-.map{background:#f0faf1}
-.phone{background:#eef7ff}
 .menu-links{
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee;
+  border-top:1px solid var(--line);
   margin-top:18px;
   padding:8px 0
 }
 .menu-links a{
   display:block;
   padding:14px 4px;
-  font-weight:800
+  font-weight:500
 }
 
 @media (min-width:768px){
   .page{max-width:720px}
   .bottom{width:min(720px,100%)}
   .logo{font-size:26px}
-  .hero h1{font-size:46px}
+  .hero h1{font-size:42px}
 }
 </style>
 </head>
@@ -349,7 +385,7 @@ footer{
 
 <main>
 <section class="hero" id="home">
-  <div class="badge">부산·경남 시공 전문</div>
+  <div class="badge">부산 · 경남 시공 전문</div>
   <h1>
     공간에 가치를 더하는<br>
     <span>금정디자인</span>
@@ -431,7 +467,7 @@ footer{
 </section>
 
 <div class="contact" id="contact">
-  <div>견적 및 상담 문의</div>
+  <div class="label">견적 및 상담 문의</div>
   <div class="num">051-711-7562</div>
   <p>부산·경남 전지역 상담 가능합니다.</p>
   <a href="tel:0517117562">전화로 상담하기</a>
@@ -456,15 +492,15 @@ footer{
     <button class="close-menu" onclick="closeMenu()">×</button>
     <div class="menu-logo">금정디자인</div>
     <div class="menu-sub">부산·경남 인테리어 전문</div>
-    <a class="menu-info address" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
+    <a class="menu-info" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
       <div class="mi">📍</div>
       <div><b>주소</b><small>부산시 금정구 수림로 61번길 1</small></div>
     </a>
-    <a class="menu-info map" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
+    <a class="menu-info" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
       <div class="mi">🗺️</div>
       <div><b>지도에서 보기</b><small>네이버 지도로 위치 확인</small></div>
     </a>
-    <a class="menu-info phone" href="tel:0517117562">
+    <a class="menu-info" href="tel:0517117562">
       <div class="mi">📞</div>
       <div><b>전화</b><small>051-711-7562</small></div>
     </a>
