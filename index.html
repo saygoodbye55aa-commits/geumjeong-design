@@ -117,10 +117,10 @@ h1{font-family:Georgia,"Times New Roman",serif;font-size:42px;line-height:1.15;m
   <div class="casebox">
     <div class="case-title"></div>
     <div class="compare">
-      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa/geumjeong-design/main/20260920_104552.jpg" alt="기존 시공전 1"><div class="label">시공전 1</div></div>
-      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa/geumjeong-design/main/20260920_104556.jpg" alt="기존 시공전 2"><div class="label">시공전 2</div></div>
-      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa/geumjeong-design/main/20260921_174211.jpg" alt="기존 시공완료 1"><div class="label">시공완료 1</div></div>
-      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa/geumjeong-design/main/20260921_174230.jpg" alt="기존 시공완료 2"><div class="label">시공완료 2</div></div>
+      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260920_104552.jpg" alt="기존 시공전 1"><div class="label">시공전 1</div></div>
+      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260920_104556.jpg" alt="기존 시공전 2"><div class="label">시공전 2</div></div>
+      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260921_174211.jpg" alt="기존 시공완료 1"><div class="label">시공완료 1</div></div>
+      <div><img src="https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260921_174230.jpg" alt="기존 시공완료 2"><div class="label">시공완료 2</div></div>
     </div>
   </div>
 </section>
@@ -154,5 +154,48 @@ h1{font-family:Georgia,"Times New Roman",serif;font-size:42px;line-height:1.15;m
   <a href="tel:0517117562"><b>☎</b><span>견적문의</span></a>
 </nav>
 </div>
+
+<script>
+(function(){
+  const menu = document.querySelector('.menu');
+  if(!menu) return;
+
+  menu.style.cursor='pointer';
+
+  menu.addEventListener('click', function(){
+    let box=document.getElementById('mobileMenu');
+
+    if(box){
+      box.remove();
+      return;
+    }
+
+    box=document.createElement('div');
+    box.id='mobileMenu';
+    box.innerHTML=
+      '<a href="#home">홈</a>'+
+      '<a href="#services">시공서비스</a>'+
+      '<a href="#cases">시공사례</a>'+
+      '<a href="#about">회사소개</a>'+
+      '<a href="#location">오시는 길</a>'+
+      '<a href="tel:0517117562">견적문의</a>';
+
+    box.style.cssText=
+      'position:fixed;top:88px;right:14px;z-index:9999;'+
+      'background:#fff;border:1px solid #e5ddd2;border-radius:14px;'+
+      'box-shadow:0 8px 25px rgba(0,0,0,.16);overflow:hidden;min-width:180px;';
+
+    box.querySelectorAll('a').forEach(function(a){
+      a.style.cssText=
+        'display:block;padding:15px 20px;color:#333;text-decoration:none;'+
+        'font-size:14px;border-bottom:1px solid #eee;';
+      a.addEventListener('click',function(){ box.remove(); });
+    });
+
+    document.body.appendChild(box);
+  });
+})();
+</script>
+
 </body>
 </html>
