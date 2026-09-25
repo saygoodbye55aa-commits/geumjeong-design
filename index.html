@@ -1,528 +1,1254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>금정디자인 | 부산·경남 인테리어</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#092b4a">
+<title>금정디자인 | GEUMJEONG DESIGN</title>
+
 <style>
 :root{
-  --gold:#9a7438;
-  --gold-soft:#c4a36a;
-  --cream:#f7f3ec;
-  --cream-2:#fffdf8;
-  --ink:#2a241c;
-  --mute:#7a7268;
-  --line:#e6dccf;
+ --brown:#092b4a;
+ --brown2:#123f67;
+ --cream:#f7f9fb;
+ --cream2:#eef3f7;
+ --ink:#172331;
+ --muted:#69737d;
+ --line:#e5e8eb;
+ --white:#fff;
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
-  margin:0;
-  background:#e8e2d8;
-  font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
-  color:var(--ink);
-  font-weight:400;
+ margin:0;
+ background:#eef1f4;
+ color:var(--ink);
+ font-family:Arial,"Noto Sans KR","Malgun Gothic",sans-serif
 }
+
 a{text-decoration:none;color:inherit}
 
 .page{
-  max-width:520px;
-  margin:auto;
-  background:var(--cream-2);
-  min-height:100vh;
-  padding-bottom:82px
+ width:min(100%,520px);
+ margin:auto;
+ background:#fff;
+ min-height:100vh;
+ overflow:hidden
 }
 
+/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(255,253,248,.94);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-  padding:12px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between
+ height:78px;
+ background:#fff;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:0 20px;
+ position:sticky;
+ top:0;
+ z-index:50;
+ border-bottom:1px solid #eee
 }
-.logo-wrap{display:flex;flex-direction:column;align-items:flex-start}
-.logo-mark{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  line-height:1
+
+.brand{
+ display:flex;
+ align-items:center;
+ gap:10px
 }
-.logo-line{
-  width:100%;
-  height:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  margin-bottom:5px
+
+.house{
+ width:43px;
+ height:38px;
+ border:3px solid var(--brown);
+ position:relative;
+ margin-top:7px
 }
-.logo-line:before,
-.logo-line:after{
-  content:"";
-  height:1px;
-  background:var(--gold);
-  flex:1
+
+.house:before{
+ content:"";
+ position:absolute;
+ width:27px;
+ height:27px;
+ border-left:3px solid var(--brown);
+ border-top:3px solid var(--brown);
+ transform:rotate(45deg);
+ left:5px;
+ top:-15px;
+ background:#fff
 }
-.logo-dia{
-  width:6px;
-  height:6px;
-  border:1px solid var(--gold);
-  transform:rotate(45deg)
+
+.house:after{
+ content:"";
+ position:absolute;
+ left:17px;
+ bottom:0;
+ width:3px;
+ height:20px;
+ background:var(--brown)
 }
-.logo{
-  font-family:"Noto Serif KR",Georgia,serif;
-  font-weight:500;
-  font-size:22px;
-  letter-spacing:.12em;
-  color:var(--gold)
+
+.brand b{
+ font-size:25px;
+ letter-spacing:-2px
 }
-.head-sub{
-  font-size:10px;
-  color:var(--mute);
-  margin-top:5px;
-  letter-spacing:.02em;
-  font-weight:400
+
+.brand small{
+ display:block;
+ font-size:8px;
+ letter-spacing:2.4px;
+ color:#69737d;
+ margin-top:3px
 }
+
 .menu{
-  font-size:26px;
-  border:0;
-  background:none;
-  cursor:pointer;
-  color:var(--ink)
+ font-size:29px;
+ color:var(--brown);
+ font-weight:700
 }
 
+/* HERO */
 .hero{
-  padding:38px 22px 34px;
-  background:linear-gradient(180deg,#f3eee4 0%,#fffdf8 100%)
+ position:relative;
+ height:610px
 }
+
+.hero>img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ display:block
+}
+
+.hero:after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:linear-gradient(
+   to bottom,
+   transparent 38%,
+   rgba(15,35,55,.68) 100%
+ )
+}
+
+.hero-content{
+ position:absolute;
+ left:24px;
+ right:24px;
+ bottom:26px;
+ z-index:2
+}
+
 .badge{
-  display:inline-block;
-  background:transparent;
-  color:var(--gold);
-  border:1px solid var(--gold);
-  padding:7px 12px;
-  border-radius:99px;
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:.04em
+ display:inline-block;
+ background:var(--brown);
+ color:#fff;
+ border-radius:20px;
+ padding:8px 13px;
+ font-size:13px;
+ font-weight:700
 }
+
 .hero h1{
-  font-family:"Noto Serif KR",Georgia,serif;
-  font-size:34px;
-  font-weight:500;
-  line-height:1.25;
-  letter-spacing:-.02em;
-  margin:18px 0 12px
+ font-size:38px;
+ line-height:1.16;
+ letter-spacing:-2.4px;
+ margin:14px 0 14px;
+ color:#172331
 }
-.hero h1 span{color:var(--gold)}
+
 .hero p{
-  font-size:15px;
-  line-height:1.7;
-  color:var(--mute);
-  font-weight:400
+ font-size:15px;
+ line-height:1.65;
+ margin:0 0 17px;
+ color:#26313b
 }
-.cta{
-  display:flex;
-  gap:8px;
-  margin-top:24px
+
+.hero-buttons{
+ display:grid;
+ gap:9px
 }
+
 .btn{
-  flex:1;
-  padding:14px 8px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:500;
-  font-size:14px
-}
-.btn.dark{background:var(--ink);color:#fff}
-.btn.gold{background:var(--gold);color:#fff}
-
-section{padding:32px 18px}
-.eyebrow{
-  font-size:11px;
-  color:var(--gold);
-  font-weight:500;
-  letter-spacing:.14em
-}
-h2{
-  font-family:"Noto Serif KR",Georgia,serif;
-  font-size:23px;
-  font-weight:500;
-  letter-spacing:-.02em;
-  margin:8px 0 18px
+ height:53px;
+ border-radius:28px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:16px;
+ font-weight:800;
+ border:1px solid var(--brown)
 }
 
-.services{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px
-}
-.service{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:16px;
-  padding:18px 14px
-}
-.service:last-child{grid-column:span 2}
-.ico{font-size:22px}
-.service b{
-  display:block;
-  font-size:16px;
-  font-weight:500;
-  margin-top:8px
-}
-.service small{
-  display:block;
-  color:var(--mute);
-  margin-top:5px;
-  font-size:12px;
-  font-weight:400
+.btn.brown{
+ background:var(--brown);
+ color:#fff
 }
 
-.portfolio{background:var(--cream)}
-.photo-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px
-}
-.photo-card{
-  margin:0;
-  background:#fff;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid var(--line)
-}
-.photo-card img{
-  display:block;
-  width:100%;
-  height:150px;
-  object-fit:cover
-}
-.photo-card figcaption{
-  padding:9px 11px;
-  font-size:12px;
-  font-weight:500;
-  color:var(--mute)
+.btn.white{
+ background:#fff;
+ color:var(--brown)
 }
 
-.trust{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px
+/* COMMON */
+.section{
+ padding:39px 20px
 }
-.trust div{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:18px 12px;
-  text-align:center
-}
-.trust b{display:block;margin-top:7px;font-weight:500}
-.trust small{color:var(--mute);font-weight:400}
 
+.title{
+ text-align:center;
+ color:var(--brown);
+ font-size:27px;
+ letter-spacing:-1.5px;
+ margin:0 0 8px
+}
+
+.desc{
+ text-align:center;
+ color:var(--muted);
+ font-size:14px;
+ line-height:1.65;
+ margin:0 0 24px
+}
+
+/* SERVICE */
+.service-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:11px
+}
+
+.service-card{
+ border:1px solid var(--line);
+ border-radius:13px;
+ overflow:hidden;
+ background:#fff
+}
+
+.service-card img{
+ display:block;
+ width:100%;
+ height:136px;
+ object-fit:cover
+}
+
+.service-card .copy{
+ text-align:center;
+ padding:10px 6px 13px
+}
+
+.service-card h3{
+ margin:0 0 5px;
+ color:var(--brown);
+ font-size:18px;
+ letter-spacing:-.8px
+}
+
+.service-card p{
+ margin:0;
+ color:var(--muted);
+ font-size:12px;
+ line-height:1.45
+}
+
+.service-card.wide{
+ grid-column:1/-1
+}
+
+.service-card.wide img{
+ height:150px
+}
+
+.service-card.wide .copy{
+ padding-bottom:15px
+}
+
+/* PROMISE */
+.promise{
+ background:var(--brown);
+ color:#fff;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ padding:21px 8px
+}
+
+.promise-item{
+ text-align:center;
+ border-right:1px solid rgba(255,255,255,.25);
+ padding:0 6px
+}
+
+.promise-item:last-child{
+ border:0
+}
+
+.promise-item .icon{
+ font-size:25px;
+ margin-bottom:5px
+}
+
+.promise-item b{
+ display:block;
+ font-size:13px;
+ margin-bottom:4px
+}
+
+.promise-item span{
+ font-size:10px;
+ line-height:1.45;
+ opacity:.9
+}
+
+/* CASES */
+.cases{
+ background:#fafafa
+}
+
+.filters{
+ display:flex;
+ gap:7px;
+ overflow:hidden;
+ margin-bottom:22px
+}
+
+.filters span{
+ white-space:nowrap;
+ border:1px solid var(--line);
+ background:#fff;
+ border-radius:20px;
+ padding:8px 12px;
+ font-size:12px
+}
+
+.filters .active{
+ background:var(--brown);
+ border-color:var(--brown);
+ color:#fff
+}
+
+.case{
+ margin-bottom:25px
+}
+
+.case:last-child{
+ margin-bottom:0
+}
+
+.case h3{
+ font-size:19px;
+ color:var(--brown);
+ margin:0 0 9px
+}
+
+.compare{
+ position:relative;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:8px
+}
+
+.compare .pic{
+ height:190px;
+ position:relative;
+ overflow:hidden;
+ border-radius:12px
+}
+
+.compare img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ display:block
+}
+
+.tag{
+ position:absolute;
+ bottom:8px;
+ left:8px;
+ padding:6px 9px;
+ border-radius:7px;
+ background:rgba(0,0,0,.76);
+ color:#fff;
+ font-size:11px
+}
+
+.tag.after{
+ background:var(--brown)
+}
+
+.arrow{
+ position:absolute;
+ left:50%;
+ top:50%;
+ transform:translate(-50%,-50%);
+ width:35px;
+ height:35px;
+ border-radius:50%;
+ background:#fff;
+ border:1px solid #ddd;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ color:var(--brown);
+ font-size:23px;
+ font-weight:900;
+ z-index:3
+}
+
+.more{
+ height:49px;
+ border:1px solid var(--brown);
+ border-radius:25px;
+ background:#fff;
+ color:var(--brown);
+ font-weight:800;
+ width:100%;
+ margin-top:4px
+}
+
+/* ABOUT */
+.about{
+ background:#fff
+}
+
+.about-photo{
+ height:240px;
+ border-radius:15px;
+ overflow:hidden
+}
+
+.about-photo img{
+ width:100%;
+ height:100%;
+ object-fit:cover
+}
+
+.about-icons{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ margin-top:16px;
+ border-top:1px solid var(--line);
+ border-bottom:1px solid var(--line);
+ padding:14px 0
+}
+
+.about-icons div{
+ text-align:center;
+ border-right:1px solid var(--line);
+ padding:3px
+}
+
+.about-icons div:last-child{
+ border:0
+}
+
+.about-icons i{
+ font-style:normal;
+ font-size:25px;
+ color:var(--brown);
+ display:block;
+ margin-bottom:5px
+}
+
+.about-icons b{
+ font-size:11px;
+ display:block
+}
+
+.about-icons span{
+ font-size:9px;
+ color:var(--muted)
+}
+
+.quote{
+ margin-top:18px;
+ background:var(--cream);
+ border-radius:13px;
+ padding:21px 18px;
+ font-size:14px;
+ line-height:1.7;
+ position:relative
+}
+
+.quote strong{
+ color:#9b7a35;
+ font-size:35px;
+ vertical-align:-12px;
+ margin-right:5px
+}
+
+/* REVIEW */
+.review{
+ background:#fafafa;
+ text-align:center;
+ padding:39px 20px
+}
+
+.review-box{
+ border:1px solid var(--line);
+ background:#fff;
+ border-radius:15px;
+ padding:19px 17px
+}
+
+.stars{
+ color:#d9a52b;
+ font-size:22px;
+ letter-spacing:2px
+}
+
+.review-box p{
+ font-size:13px;
+ line-height:1.7;
+ color:#5c6670;
+ margin:10px 0
+}
+
+.review-box small{
+ color:#888
+}
+
+/* CONTACT */
 .contact{
-  margin:0 18px 25px;
-  border-radius:20px;
-  background:#2a241c;
-  color:#f7f3ec;
-  padding:26px 20px
-}
-.contact .label{
-  font-size:12px;
-  letter-spacing:.08em;
-  color:var(--gold-soft)
-}
-.contact .num{
-  font-family:"Noto Serif KR",Georgia,serif;
-  font-size:28px;
-  font-weight:500;
-  margin:10px 0 8px
-}
-.contact p{color:#c9c0b4;font-size:13px;margin:0}
-.contact a{
-  display:block;
-  background:var(--gold);
-  color:#fff;
-  padding:14px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:500;
-  margin-top:18px
+ text-align:center;
+ padding:40px 20px;
+ background:#fff
 }
 
+.contact .title{
+ font-size:27px
+}
+
+.contact .desc{
+ margin-bottom:18px
+}
+
+.contact .hero-buttons{
+ gap:9px
+}
+
+/* MAP */
+.map{
+ height:210px;
+ margin-top:25px;
+ border-radius:15px;
+ background:#e9edf1;
+ position:relative;
+ overflow:hidden
+}
+
+.map:before,
+.map:after{
+ content:"";
+ position:absolute;
+ background:#fff;
+ opacity:.9
+}
+
+.map:before{
+ height:3px;
+ width:130%;
+ left:-15%;
+ top:45%;
+ transform:rotate(-13deg);
+ box-shadow:0 42px 0 #fff
+}
+
+.map:after{
+ width:3px;
+ height:130%;
+ top:-15%;
+ left:52%;
+ transform:rotate(18deg);
+ box-shadow:70px 0 0 #fff
+}
+
+.pin{
+ position:absolute;
+ left:50%;
+ top:46%;
+ transform:translate(-50%,-50%);
+ font-size:43px;
+ z-index:2
+}
+
+.kakao{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ height:49px;
+ margin-top:10px;
+ border-radius:25px;
+ background:#f3d76f;
+ color:#514619;
+ font-weight:800
+}
+
+/* FOOTER */
 footer{
-  text-align:center;
-  color:#9a9186;
-  font-size:11px;
-  padding:6px 20px 22px;
-  line-height:1.7
+ background:#f3f5f7;
+ color:#69737d;
+ padding:25px 20px 92px;
+ font-size:11px;
+ line-height:1.7
 }
 
+footer strong{
+ color:var(--brown);
+ font-size:15px
+}
+
+/* BOTTOM NAV */
 .bottom{
-  position:fixed;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(520px,100%);
-  height:70px;
-  background:#fffdf8;
-  border-top:1px solid var(--line);
-  display:flex;
-  z-index:30
+ position:fixed;
+ left:50%;
+ bottom:0;
+ transform:translateX(-50%);
+ width:min(100%,520px);
+ height:66px;
+ background:var(--brown);
+ color:#fff;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ z-index:100;
+ border-radius:16px 16px 0 0
 }
+
 .bottom a{
-  flex:1;
-  text-align:center;
-  padding-top:11px;
-  font-size:11px;
-  font-weight:500;
-  color:var(--mute)
-}
-.bottom b{display:block;font-size:18px;color:var(--ink);margin-bottom:2px}
-.bottom .call{background:var(--gold);color:#fff}
-.bottom .call b{color:#fff}
-
-.side-menu{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:100;
-  background:rgba(42,36,28,.45)
-}
-.side-menu.open{display:block}
-.side-inner{
-  position:absolute;
-  right:0;
-  top:0;
-  height:100%;
-  width:min(390px,88%);
-  background:#fffdf8;
-  padding:70px 20px 30px;
-  overflow:auto
-}
-.close-menu{
-  position:absolute;
-  right:18px;
-  top:15px;
-  border:0;
-  background:none;
-  font-size:36px;
-  line-height:1;
-  color:var(--ink)
-}
-.menu-logo{
-  font-family:"Noto Serif KR",Georgia,serif;
-  font-weight:500;
-  font-size:26px;
-  letter-spacing:.12em;
-  color:var(--gold)
-}
-.menu-sub{
-  font-size:13px;
-  color:var(--mute);
-  margin:8px 0 22px;
-  border-bottom:1px solid var(--line);
-  padding-bottom:20px
-}
-.menu-info{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:16px;
-  margin:10px 0;
-  border-radius:14px;
-  background:#fff;
-  border:1px solid var(--line)
-}
-.menu-info .mi{font-size:22px}
-.menu-info b{display:block;font-size:16px;font-weight:500}
-.menu-info small{
-  display:block;
-  color:var(--mute);
-  margin-top:5px;
-  font-size:13px
-}
-.menu-links{
-  border-top:1px solid var(--line);
-  margin-top:18px;
-  padding:8px 0
-}
-.menu-links a{
-  display:block;
-  padding:14px 4px;
-  font-weight:500
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column;
+ font-size:10px;
+ gap:3px;
+ border-right:1px solid rgba(255,255,255,.25)
 }
 
-@media (min-width:768px){
-  .page{max-width:720px}
-  .bottom{width:min(720px,100%)}
-  .logo{font-size:26px}
-  .hero h1{font-size:42px}
+.bottom a:last-child{
+ border:0
+}
+
+.bottom b{
+ font-size:18px
+}
+
+@media(max-width:380px){
+
+ .hero h1{
+  font-size:33px
+ }
+
+ .hero{
+  height:565px
+ }
+
+ .service-card img{
+  height:120px
+ }
+
+ .compare .pic{
+  height:165px
+ }
 }
 </style>
 </head>
+
 <body>
+
 <div class="page">
 
+<!-- HEADER -->
 <header>
-  <div class="logo-wrap">
-    <div class="logo-mark">
-      <div class="logo-line"><span class="logo-dia"></span></div>
-      <div class="logo">금정디자인</div>
-    </div>
-    <div class="head-sub">도배 · 도장 · 장판 · 누수복원 · 실내인테리어</div>
-  </div>
-  <button class="menu" onclick="openMenu()">☰</button>
+
+<a class="brand" href="#home">
+
+<span class="house"></span>
+
+<span>
+<b>금정디자인</b>
+<small>GEUMJEONG DESIGN</small>
+</span>
+
+</a>
+
+<span class="menu">☰</span>
+
 </header>
 
-<main>
+
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="badge">부산 · 경남 시공 전문</div>
-  <h1>
-    공간에 가치를 더하는<br>
-    <span>금정디자인</span>
-  </h1>
-  <p>
-    도배부터 도장, 장판, 누수복원까지<br>
-    깔끔하고 꼼꼼하게 시공합니다.
-  </p>
-  <div class="cta">
-    <a class="btn dark" href="tel:0517117562">전화상담</a>
-    <a class="btn gold" href="sms:0517117562">문자상담</a>
-  </div>
-</section>
 
-<section id="services">
-  <div class="eyebrow">SERVICE</div>
-  <h2>시공 서비스</h2>
-  <div class="services">
-    <div class="service">
-      <div class="ico">🏠</div>
-      <b>도배</b>
-      <small>벽지 교체 · 부분도배</small>
-    </div>
-    <div class="service">
-      <div class="ico">🎨</div>
-      <b>도장</b>
-      <small>수성 · 유성 · 실내도장</small>
-    </div>
-    <div class="service">
-      <div class="ico">🧱</div>
-      <b>장판</b>
-      <small>장판 교체 · 바닥 시공</small>
-    </div>
-    <div class="service">
-      <div class="ico">💧</div>
-      <b>누수복원</b>
-      <small>누수 흔적 복원 · 보수</small>
-    </div>
-    <div class="service">
-      <div class="ico">✨</div>
-      <b>실내인테리어</b>
-      <small>공간에 맞춘 종합 인테리어</small>
-    </div>
-  </div>
-</section>
+<img src="20260921_174230.jpg" alt="금정디자인 인테리어">
 
-<section class="portfolio" id="portfolio">
-  <div class="eyebrow">PORTFOLIO</div>
-  <h2>시공 사례</h2>
-  <div class="photo-grid">
-    <figure class="photo-card">
-      <img src="20260920_104552.jpg" alt="도배시공 전">
-      <figcaption>도배시공 전</figcaption>
-    </figure>
-    <figure class="photo-card">
-      <img src="20260920_104556.jpg" alt="도배시공 전">
-      <figcaption>도배시공 전</figcaption>
-    </figure>
-    <figure class="photo-card">
-      <img src="20260921_174211.jpg" alt="도배시공 후">
-      <figcaption>도배시공 후</figcaption>
-    </figure>
-    <figure class="photo-card">
-      <img src="20260921_174230.jpg" alt="도배시공 후">
-      <figcaption>도배시공 후</figcaption>
-    </figure>
-  </div>
-</section>
+<div class="hero-content">
 
-<section>
-  <div class="eyebrow">WHY GEUMJEONG</div>
-  <h2>믿고 맡기는 시공</h2>
-  <div class="trust">
-    <div>✔️<b>꼼꼼한 시공</b><small>작은 부분까지 세심하게</small></div>
-    <div>🏆<b>현장 경험</b><small>다양한 시공 경험</small></div>
-    <div>📍<b>부산·경남</b><small>지역 출장 시공</small></div>
-    <div>💬<b>친절 상담</b><small>편하게 문의하세요</small></div>
-  </div>
-</section>
+<span class="badge">
+부산 · 경남 인테리어 시공 전문
+</span>
 
-<div class="contact" id="contact">
-  <div class="label">견적 및 상담 문의</div>
-  <div class="num">051-711-7562</div>
-  <p>부산·경남 전지역 상담 가능합니다.</p>
-  <a href="tel:0517117562">전화로 상담하기</a>
+<h1>
+공간이 바뀌면<br>
+일상이 달라집니다.
+</h1>
+
+<p>
+도배 · 도장 · 장판 · 누수복원 · 실내인테리어<br>
+금정디자인이 함께합니다.
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn brown" href="tel:0517117562">
+☎　전화상담하기　›
+</a>
+
+<a class="btn white" href="sms:0517117562">
+💬　문자상담하기　›
+</a>
+
 </div>
-</main>
 
+</div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services" class="section">
+
+<h2 class="title">
+금정디자인 서비스
+</h2>
+
+<p class="desc">
+공간의 시작부터 마무리까지<br>
+꼼꼼하고 정직하게 시공합니다.
+</p>
+
+<div class="service-grid">
+
+<article class="service-card">
+
+<img src="20260920_104552.jpg" alt="도배">
+
+<div class="copy">
+
+<h3>도배</h3>
+
+<p>
+깔끔하고<br>
+튼튼한 시공
+</p>
+
+</div>
+</article>
+
+
+<article class="service-card">
+
+<img src="20260920_104556.jpg" alt="도장">
+
+<div class="copy">
+
+<h3>도장(페인트)</h3>
+
+<p>
+실내·외<br>
+전문 시공
+</p>
+
+</div>
+</article>
+
+
+<article class="service-card">
+
+<img src="20260921_174211.jpg" alt="장판">
+
+<div class="copy">
+
+<h3>장판</h3>
+
+<p>
+다양한<br>
+바닥재 시공
+</p>
+
+</div>
+</article>
+
+
+<article class="service-card">
+
+<img src="20260921_174230.jpg" alt="누수복원">
+
+<div class="copy">
+
+<h3>누수복원</h3>
+
+<p>
+정확한 원인진단<br>
+신속한 복원
+</p>
+
+</div>
+</article>
+
+
+<article class="service-card wide">
+
+<img src="20260921_174230.jpg" alt="실내인테리어">
+
+<div class="copy">
+
+<h3>실내인테리어</h3>
+
+<p>
+공간을 새롭게<br>
+가치있게
+</p>
+
+</div>
+</article>
+
+</div>
+
+</section>
+
+
+<!-- PROMISE -->
+<div class="promise">
+
+<div class="promise-item">
+
+<div class="icon">◇</div>
+
+<b>정확한 시공</b>
+
+<span>
+숙련된 전문가의<br>
+꼼꼼한 시공
+</span>
+
+</div>
+
+
+<div class="promise-item">
+
+<div class="icon">▣</div>
+
+<b>합리적인 견적</b>
+
+<span>
+투명하고<br>
+정직한 비용
+</span>
+
+</div>
+
+
+<div class="promise-item">
+
+<div class="icon">♢</div>
+
+<b>책임있는 사후관리</b>
+
+<span>
+시공 후에도<br>
+든든하게
+</span>
+
+</div>
+
+</div>
+
+
+<!-- CASES -->
+<section id="cases" class="section cases">
+
+<h2 class="title">
+시공사례
+</h2>
+
+<p class="desc">
+금정디자인의 실제 시공사례를 확인해보세요.<br>
+고객님의 공간이 이렇게 달라집니다.
+</p>
+
+
+<div class="filters">
+
+<span class="active">전체</span>
+<span>도배</span>
+<span>도장</span>
+<span>장판</span>
+<span>누수복원</span>
+<span>인테리어</span>
+
+</div>
+
+
+<!-- CASE 1 -->
+<div class="case">
+
+<h3>도배 시공 사례</h3>
+
+<div class="compare">
+
+<div class="pic">
+
+<img src="20260920_104552.jpg">
+
+<span class="tag">
+시공 전
+</span>
+
+</div>
+
+
+<div class="pic">
+
+<img src="20260921_174211.jpg">
+
+<span class="tag after">
+시공 후
+</span>
+
+</div>
+
+
+<span class="arrow">
+›
+</span>
+
+</div>
+
+</div>
+
+
+<!-- CASE 2 -->
+<div class="case">
+
+<h3>도장 시공 사례</h3>
+
+<div class="compare">
+
+<div class="pic">
+
+<img src="20260920_104556.jpg">
+
+<span class="tag">
+시공 전
+</span>
+
+</div>
+
+
+<div class="pic">
+
+<img src="20260921_174230.jpg">
+
+<span class="tag after">
+시공 후
+</span>
+
+</div>
+
+
+<span class="arrow">
+›
+</span>
+
+</div>
+
+</div>
+
+
+<!-- CASE 3 -->
+<div class="case">
+
+<h3>장판 시공 사례</h3>
+
+<div class="compare">
+
+<div class="pic">
+
+<img src="20260921_174211.jpg">
+
+<span class="tag">
+시공 전
+</span>
+
+</div>
+
+
+<div class="pic">
+
+<img src="20260921_174230.jpg">
+
+<span class="tag after">
+시공 후
+</span>
+
+</div>
+
+
+<span class="arrow">
+›
+</span>
+
+</div>
+
+</div>
+
+
+<button
+class="more"
+onclick="location.href='#contact'">
+
+더 많은 시공사례 보기　›
+
+</button>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="section about">
+
+<h2 class="title">
+금정디자인 소개
+</h2>
+
+<p class="desc">
+부산·경남 지역을 중심으로<br>
+고객님의 공간을 정성껏 만들어갑니다.
+</p>
+
+
+<div class="about-photo">
+
+<img
+src="20260921_174230.jpg"
+alt="금정디자인 실내 시공">
+
+</div>
+
+
+<div class="about-icons">
+
+<div>
+
+<i>⌂</i>
+
+<b>
+부산 · 경남
+</b>
+
+<span>
+시공 전문
+</span>
+
+</div>
+
+
+<div>
+
+<i>⚙</i>
+
+<b>
+숙련된
+</b>
+
+<span>
+전문 시공팀
+</span>
+
+</div>
+
+
+<div>
+
+<i>♧</i>
+
+<b>
+고객 맞춤
+</b>
+
+<span>
+상담 진행
+</span>
+
+</div>
+
+
+<div>
+
+<i>♢</i>
+
+<b>
+책임 시공
+</b>
+
+<span>
+사후관리
+</span>
+
+</div>
+
+</div>
+
+
+<div class="quote">
+
+<strong>“</strong>
+
+풍부한 경험과 노하우로
+고객님의 공간을 더 아름답고
+편안하게 만들어드립니다.
+
+</div>
+
+</section>
+
+
+<!-- REVIEW -->
+<section class="review">
+
+<h2 class="title">
+고객 만족 후기
+</h2>
+
+<p class="desc">
+금정디자인을 이용해주신 고객님들의<br>
+소중한 후기를 소개합니다.
+</p>
+
+
+<div class="review-box">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+
+도배 시공했는데 정말 깔끔하게 잘해주셨어요.<br>
+상담도 친절하고 마무리가 완벽했습니다.<br>
+다음에도 꼭 금정디자인에 맡기겠습니다.
+
+</p>
+
+<small>
+부산 동래구 고객님
+</small>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+<h2 class="title">
+지금 바로 상담해보세요
+</h2>
+
+<p class="desc">
+궁금한 점이 있으시면 언제든지 연락주세요.<br>
+친절하게 상담해드립니다.
+</p>
+
+
+<div class="hero-buttons">
+
+<a class="btn brown" href="tel:0517117562">
+☎　전화상담하기　›
+</a>
+
+<a class="btn white" href="sms:0517117562">
+💬　문자상담하기　›
+</a>
+
+</div>
+
+
+<div class="map">
+
+<span class="pin">
+📍
+</span>
+
+</div>
+
+
+<a
+class="kakao"
+href="https://map.kakao.com/?q=부산 금정구 수림로 61번길 1">
+
+📍 카카오맵으로 길찾기　›
+
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
-  금정디자인 · 대표 전정미<br>
-  부산시 금정구 수림로 61번길 1
-</footer>
-</div>
 
+<strong>
+금정디자인 · 대표 전정미
+</strong>
+
+<br>
+
+부산시 금정구 수림로 61번길 1
+
+<br>
+
+도배 · 도장 · 장판 · 누수복원 · 실내인테리어
+
+<br>
+
+부산·경남 전지역 시공
+
+</footer>
+
+
+<!-- BOTTOM -->
 <nav class="bottom">
-  <a href="#home"><b>⌂</b>홈</a>
-  <a href="#services"><b>▦</b>서비스</a>
-  <a href="#portfolio"><b>▧</b>시공사례</a>
-  <a class="call" href="tel:0517117562"><b>☎</b>견적문의</a>
+
+<a href="#home">
+
+<b>⌂</b>
+
+홈
+
+</a>
+
+
+<a href="#services">
+
+<b>▦</b>
+
+서비스
+
+</a>
+
+
+<a href="#cases">
+
+<b>▤</b>
+
+시공사례
+
+</a>
+
 </nav>
 
-<div class="side-menu" id="sideMenu" onclick="closeMenu(event)">
-  <div class="side-inner" onclick="event.stopPropagation()">
-    <button class="close-menu" onclick="closeMenu()">×</button>
-    <div class="menu-logo">금정디자인</div>
-    <div class="menu-sub">부산·경남 인테리어 전문</div>
-    <a class="menu-info" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
-      <div class="mi">📍</div>
-      <div><b>주소</b><small>부산시 금정구 수림로 61번길 1</small></div>
-    </a>
-    <a class="menu-info" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
-      <div class="mi">🗺️</div>
-      <div><b>지도에서 보기</b><small>네이버 지도로 위치 확인</small></div>
-    </a>
-    <a class="menu-info" href="tel:0517117562">
-      <div class="mi">📞</div>
-      <div><b>전화</b><small>051-711-7562</small></div>
-    </a>
-    <div class="menu-links">
-      <a href="#home" onclick="closeMenu()">홈</a>
-      <a href="#services" onclick="closeMenu()">시공 서비스</a>
-      <a href="#portfolio" onclick="closeMenu()">시공 사례</a>
-      <a href="#contact" onclick="closeMenu()">견적 및 상담</a>
-    </div>
-  </div>
 </div>
 
-<script>
-function openMenu(){
-  document.getElementById("sideMenu").classList.add("open");
-  document.body.style.overflow="hidden";
-}
-function closeMenu(e){
-  if(e && e.target !== e.currentTarget){ return; }
-  document.getElementById("sideMenu").classList.remove("open");
-  document.body.style.overflow="";
-}
-</script>
 </body>
 </html>
