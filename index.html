@@ -1,10 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>금정디자인 | 부산·경남 인테리어</title>
-
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -24,28 +23,57 @@ a{text-decoration:none;color:inherit}
   padding-bottom:82px
 }
 
-/* 상단 */
 header{
   position:sticky;
   top:0;
   z-index:20;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  padding:13px 18px;
+  background:#fffef9;
+  border-bottom:1px solid #efe8dc;
+  padding:12px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between
 }
-.logo{
-  font-weight:900;
-  font-size:24px;
-  letter-spacing:-1.5px
+.logo-wrap{display:flex;flex-direction:column;align-items:flex-start}
+.logo-mark{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:1
 }
-.logo span{color:#b48742}
+.logo-line{
+  width:100%;
+  height:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-bottom:4px
+}
+.logo-line:before,
+.logo-line:after{
+  content:"";
+  height:1px;
+  background:#b48742;
+  flex:1
+}
+.logo-dia{
+  width:6px;
+  height:6px;
+  border:1px solid #b48742;
+  transform:rotate(45deg)
+}
+.logo{
+  font-family:Georgia,"Noto Serif KR","Times New Roman",serif;
+  font-weight:500;
+  font-size:22px;
+  letter-spacing:.08em;
+  color:#b48742
+}
 .head-sub{
   font-size:10px;
   color:#777;
-  margin-top:2px
+  margin-top:4px
 }
 .menu{
   font-size:28px;
@@ -54,7 +82,6 @@ header{
   cursor:pointer
 }
 
-/* 메인 */
 .hero{
   padding:36px 22px 32px;
   background:linear-gradient(145deg,#f8f5ef,#fff)
@@ -109,7 +136,6 @@ h2{
   margin:6px 0 17px
 }
 
-/* 서비스 */
 .services{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -134,7 +160,6 @@ h2{
   font-size:12px
 }
 
-/* 시공사진 */
 .portfolio{background:#f7f3ec}
 .photo-grid{
   display:grid;
@@ -161,7 +186,6 @@ h2{
   color:#555
 }
 
-/* 신뢰 */
 .trust{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -173,13 +197,9 @@ h2{
   padding:18px 13px;
   text-align:center
 }
-.trust b{
-  display:block;
-  margin-top:7px
-}
+.trust b{display:block;margin-top:7px}
 .trust small{color:#777}
 
-/* 문의 */
 .contact{
   margin:0 18px 25px;
   border-radius:22px;
@@ -192,10 +212,7 @@ h2{
   font-weight:900;
   margin:9px 0
 }
-.contact p{
-  color:#ccc;
-  font-size:13px
-}
+.contact p{color:#ccc;font-size:13px}
 .contact a{
   display:block;
   background:#b48742;
@@ -213,7 +230,6 @@ footer{
   padding:5px 20px 20px
 }
 
-/* 아래 메뉴 */
 .bottom{
   position:fixed;
   bottom:0;
@@ -233,16 +249,9 @@ footer{
   font-size:11px;
   font-weight:800
 }
-.bottom b{
-  display:block;
-  font-size:21px
-}
-.bottom .call{
-  background:#171717;
-  color:#fff
-}
+.bottom b{display:block;font-size:21px}
+.bottom .call{background:#171717;color:#fff}
 
-/* 오른쪽 메뉴 */
 .side-menu{
   display:none;
   position:fixed;
@@ -251,7 +260,6 @@ footer{
   background:rgba(0,0,0,.55)
 }
 .side-menu.open{display:block}
-
 .side-inner{
   position:absolute;
   right:0;
@@ -273,11 +281,12 @@ footer{
   line-height:1
 }
 .menu-logo{
-  font-weight:900;
-  font-size:32px;
-  letter-spacing:-2px
+  font-family:Georgia,"Noto Serif KR","Times New Roman",serif;
+  font-weight:500;
+  font-size:28px;
+  letter-spacing:.08em;
+  color:#b48742
 }
-.menu-logo span{color:#b48742}
 .menu-sub{
   font-size:13px;
   color:#777;
@@ -285,7 +294,6 @@ footer{
   border-bottom:1px solid #eee;
   padding-bottom:20px
 }
-
 .menu-info{
   display:flex;
   align-items:center;
@@ -295,10 +303,7 @@ footer{
   border-radius:16px
 }
 .menu-info .mi{font-size:27px}
-.menu-info b{
-  display:block;
-  font-size:18px
-}
+.menu-info b{display:block;font-size:18px}
 .menu-info small{
   display:block;
   color:#666;
@@ -308,7 +313,6 @@ footer{
 .address{background:#fff3f0}
 .map{background:#f0faf1}
 .phone{background:#eef7ff}
-
 .menu-links{
   border-top:1px solid #eee;
   border-bottom:1px solid #eee;
@@ -320,147 +324,111 @@ footer{
   padding:14px 4px;
   font-weight:800
 }
+
+@media (min-width:768px){
+  .page{max-width:720px}
+  .bottom{width:min(720px,100%)}
+  .logo{font-size:26px}
+  .hero h1{font-size:46px}
+}
 </style>
 </head>
-
 <body>
-
 <div class="page">
 
 <header>
-  <div>
-    <div class="logo">금정<span>디자인</span></div>
+  <div class="logo-wrap">
+    <div class="logo-mark">
+      <div class="logo-line"><span class="logo-dia"></span></div>
+      <div class="logo">금정디자인</div>
+    </div>
     <div class="head-sub">도배 · 도장 · 장판 · 누수복원 · 실내인테리어</div>
   </div>
-
   <button class="menu" onclick="openMenu()">☰</button>
 </header>
 
 <main>
-
 <section class="hero" id="home">
   <div class="badge">부산·경남 시공 전문</div>
-
   <h1>
     공간에 가치를 더하는<br>
     <span>금정디자인</span>
   </h1>
-
   <p>
     도배부터 도장, 장판, 누수복원까지<br>
     깔끔하고 꼼꼼하게 시공합니다.
   </p>
-
   <div class="cta">
     <a class="btn dark" href="tel:0517117562">전화상담</a>
     <a class="btn gold" href="sms:0517117562">문자상담</a>
   </div>
 </section>
 
-
 <section id="services">
   <div class="eyebrow">SERVICE</div>
   <h2>시공 서비스</h2>
-
   <div class="services">
-
     <div class="service">
       <div class="ico">🏠</div>
       <b>도배</b>
       <small>벽지 교체 · 부분도배</small>
     </div>
-
     <div class="service">
       <div class="ico">🎨</div>
       <b>도장</b>
       <small>수성 · 유성 · 실내도장</small>
     </div>
-
     <div class="service">
       <div class="ico">🧱</div>
       <b>장판</b>
       <small>장판 교체 · 바닥 시공</small>
     </div>
-
     <div class="service">
       <div class="ico">💧</div>
       <b>누수복원</b>
       <small>누수 흔적 복원 · 보수</small>
     </div>
-
     <div class="service">
       <div class="ico">✨</div>
       <b>실내인테리어</b>
       <small>공간에 맞춘 종합 인테리어</small>
     </div>
-
   </div>
 </section>
-
 
 <section class="portfolio" id="portfolio">
   <div class="eyebrow">PORTFOLIO</div>
   <h2>시공 사례</h2>
-
   <div class="photo-grid">
-
     <figure class="photo-card">
       <img src="20260920_104552.jpg" alt="도배시공 전">
       <figcaption>도배시공 전</figcaption>
     </figure>
-
     <figure class="photo-card">
       <img src="20260920_104556.jpg" alt="도배시공 전">
       <figcaption>도배시공 전</figcaption>
     </figure>
-
     <figure class="photo-card">
       <img src="20260921_174211.jpg" alt="도배시공 후">
       <figcaption>도배시공 후</figcaption>
     </figure>
-
     <figure class="photo-card">
       <img src="20260921_174230.jpg" alt="도배시공 후">
       <figcaption>도배시공 후</figcaption>
     </figure>
-
   </div>
 </section>
-
 
 <section>
   <div class="eyebrow">WHY GEUMJEONG</div>
   <h2>믿고 맡기는 시공</h2>
-
   <div class="trust">
-
-    <div>
-      ✔️
-      <b>꼼꼼한 시공</b>
-      <small>작은 부분까지 세심하게</small>
-    </div>
-
-    <div>
-      🏆
-      <b>현장 경험</b>
-      <small>다양한 시공 경험</small>
-    </div>
-
-    <div>
-      📍
-      <b>부산·경남</b>
-      <small>지역 출장 시공</small>
-    </div>
-
-    <div>
-      💬
-      <b>친절 상담</b>
-      <small>편하게 문의하세요</small>
-    </div>
-
+    <div>✔️<b>꼼꼼한 시공</b><small>작은 부분까지 세심하게</small></div>
+    <div>🏆<b>현장 경험</b><small>다양한 시공 경험</small></div>
+    <div>📍<b>부산·경남</b><small>지역 출장 시공</small></div>
+    <div>💬<b>친절 상담</b><small>편하게 문의하세요</small></div>
   </div>
 </section>
-
 
 <div class="contact" id="contact">
   <div>견적 및 상담 문의</div>
@@ -468,135 +436,57 @@ footer{
   <p>부산·경남 전지역 상담 가능합니다.</p>
   <a href="tel:0517117562">전화로 상담하기</a>
 </div>
-
 </main>
-
 
 <footer>
   금정디자인 · 대표 전정미<br>
   부산시 금정구 수림로 61번길 1
 </footer>
-
 </div>
-
 
 <nav class="bottom">
-
-  <a href="#home">
-    <b>⌂</b>
-    홈
-  </a>
-
-  <a href="#services">
-    <b>▦</b>
-    서비스
-  </a>
-
-  <a href="#portfolio">
-    <b>▧</b>
-    시공사례
-  </a>
-
-  <a class="call" href="tel:0517117562">
-    <b>☎</b>
-    견적문의
-  </a>
-
+  <a href="#home"><b>⌂</b>홈</a>
+  <a href="#services"><b>▦</b>서비스</a>
+  <a href="#portfolio"><b>▧</b>시공사례</a>
+  <a class="call" href="tel:0517117562"><b>☎</b>견적문의</a>
 </nav>
 
-
-<!-- 오른쪽 메뉴 -->
-
 <div class="side-menu" id="sideMenu" onclick="closeMenu(event)">
-
   <div class="side-inner" onclick="event.stopPropagation()">
-
     <button class="close-menu" onclick="closeMenu()">×</button>
-
-    <div class="menu-logo">
-      금정<span>디자인</span>
-    </div>
-
-    <div class="menu-sub">
-      부산·경남 인테리어 전문
-    </div>
-
-
-    <a class="menu-info address"
-       href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201"
-       target="_blank">
-
+    <div class="menu-logo">금정디자인</div>
+    <div class="menu-sub">부산·경남 인테리어 전문</div>
+    <a class="menu-info address" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
       <div class="mi">📍</div>
-
-      <div>
-        <b>주소</b>
-        <small>부산시 금정구 수림로 61번길 1</small>
-      </div>
-
+      <div><b>주소</b><small>부산시 금정구 수림로 61번길 1</small></div>
     </a>
-
-
-    <a class="menu-info map"
-       href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201"
-       target="_blank">
-
+    <a class="menu-info map" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
       <div class="mi">🗺️</div>
-
-      <div>
-        <b>지도에서 보기</b>
-        <small>네이버 지도로 위치 확인</small>
-      </div>
-
+      <div><b>지도에서 보기</b><small>네이버 지도로 위치 확인</small></div>
     </a>
-
-
     <a class="menu-info phone" href="tel:0517117562">
-
       <div class="mi">📞</div>
-
-      <div>
-        <b>전화</b>
-        <small>051-711-7562</small>
-      </div>
-
+      <div><b>전화</b><small>051-711-7562</small></div>
     </a>
-
-
     <div class="menu-links">
-
       <a href="#home" onclick="closeMenu()">홈</a>
-
       <a href="#services" onclick="closeMenu()">시공 서비스</a>
-
       <a href="#portfolio" onclick="closeMenu()">시공 사례</a>
-
       <a href="#contact" onclick="closeMenu()">견적 및 상담</a>
-
     </div>
-
   </div>
-
 </div>
 
-
 <script>
-
 function openMenu(){
   document.getElementById("sideMenu").classList.add("open");
   document.body.style.overflow="hidden";
 }
-
 function closeMenu(e){
-
-  if(e && e.target !== e.currentTarget){
-    return;
-  }
-
+  if(e && e.target !== e.currentTarget){ return; }
   document.getElementById("sideMenu").classList.remove("open");
   document.body.style.overflow="";
 }
-
 </script>
-
 </body>
 </html>
