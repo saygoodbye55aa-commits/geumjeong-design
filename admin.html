@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>금정디자인 관리자</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f3eb;color:#292621;font-family:Arial,"Noto Sans KR",sans-serif}
+.wrap{max-width:560px;margin:auto;background:#fff;min-height:100vh;padding:24px 18px 40px}
+h1{color:#9b7745;margin:5px 0 6px}.sub{color:#777;margin-bottom:25px}
+.box{border:1px solid #ddd8ce;border-radius:18px;padding:18px;margin:14px 0;background:#fff}
+label{display:block;font-weight:700;margin:13px 0 7px}
+input[type=text],input[type=password]{width:100%;padding:13px;border:1px solid #ccc;border-radius:10px;font-size:16px}
+input[type=file]{width:100%;padding:10px 0}
+button{width:100%;padding:15px;border:0;border-radius:12px;background:#a9844d;color:white;font-size:17px;font-weight:700;margin-top:18px}
+button:disabled{opacity:.5}.note{font-size:13px;color:#777;line-height:1.6}.status{margin-top:15px;padding:12px;border-radius:10px;background:#f6f2ea;white-space:pre-wrap}
+a{color:#8b6838}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>금정디자인 관리자</h1>
+<div class="sub">시공사례를 휴대폰에서 추가하는 곳</div>
+
+<div class="box">
+<label>GitHub 사용자명</label>
+<input id="owner" type="text" value="saygoodbye55aa-commits">
+<label>저장소</label>
+<input id="repo" type="text" value="geumjeong-design">
+<label>GitHub 접근 토큰</label>
+<input id="token" type="password" placeholder="처음 한 번 입력">
+<div class="note">토큰은 홈페이지 코드에 넣지 않습니다. 이 관리자 화면에서만 사용합니다. 다른 사람에게 절대 보여주지 마세요.</div>
+</div>
+
+<div class="box">
+<label>현장 이름</label>
+<input id="title" type="text" placeholder="예: 대현 푸르지오 크라센트 도배시공">
+
+<label>시공 전 사진</label>
+<input id="before" type="file" accept="image/*" multiple>
+
+<label>시공 후 사진</label>
+<input id="after" type="file" accept="image/*" multiple>
+
+<button id="save">현장 추가하기</button>
+<div id="status" class="status">아직 등록하지 않았습니다.</div>
+</div>
+
+<div class="box">
+<div class="note">
+현재 홈페이지는 GitHub Pages입니다. 이 관리자는 GitHub에 사진과 현장 정보를 저장하는 방식입니다.<br><br>
+처음 한 번만 GitHub 접근 토큰을 준비하면, 이후에는 <b>현장 이름 → 전 사진 → 후 사진 → 현장 추가하기</b> 순서로 사용하면 됩니다.
+</div>
+</div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+$('save').onclick=async()=>{
+ const owner=$('owner').value.trim(), repo=$('repo').value.trim(), token=$('token').value.trim();
+ const title=$('title').value.trim(), before=[...$('before').files], after=[...$('after').files];
+ if(!token||!title||!before.length||!after.length){$('status').textContent='GitHub 토큰, 현장 이름, 시공 전/후 사진을 모두 입력해주세요.';return}
+ $('save').disabled=true;$('status').textContent='사진을 올리는 중입니다...';
+ try{
+  const shaInfo=await api(`https://api.github.com/repos/${owner}/${repo}/contents/cases.json`,token,'GET');
+  let cases=[{
+    title:'도배 시공현장',
+    before:[
+      'https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260920_104552.jpg',
+      'https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260920_104556.jpg'
+    ],
+    after:[
+      'https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260921_174211.jpg',
+      'https://raw.githubusercontent.com/saygoodbye55aa-commits/geumjeong-design/main/20260921_174230.jpg'
+    ]
+  }];
+  if(shaInfo.ok){const j=await shaInfo.json();cases=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\n/g,'')),c=>c.charCodeAt(0))))}
+  const id='case-'+Date.now(), base=`cases/${id}`;
+  async function upload(file,kind,n){
+   const bytes=new Uint8Array(await file.arrayBuffer());let s='';for(let i=0;i<bytes.length;i+=0x8000)s+=String.fromCharCode(...bytes.subarray(i,i+0x8000));
+   const content=btoa(s);const path=`${base}/${kind}${n+1}-${safe(file.name)}`;
+   const r=await api(`https://api.github.com/repos/${owner}/${repo}/contents/${encodeURI(path)}`,token,'PUT',{
+    message:`시공사례 사진 추가: ${title}`,content,branch:'main'
+   });if(!r.ok)throw new Error(await r.text());return path;
+  }
+  const b=[],a=[];for(let i=0;i<before.length;i++)b.push(await upload(before[i],'before',i));
+  for(let i=0;i<after.length;i++)a.push(await upload(after[i],'after',i));
+  cases.push({title,before:b,after:a});
+  const json=JSON.stringify(cases,null,2), enc=btoa(unescape(encodeURIComponent(json)));
+  const body={message:`시공사례 정보 추가: ${title}`,content:enc,branch:'main'};
+  if(shaInfo.ok){const j=await shaInfo.json();body.sha=j.sha}
+  const r=await api(`https://api.github.com/repos/${owner}/${repo}/contents/cases.json`,token,'PUT',body);
+  if(!r.ok)throw new Error(await r.text());
+  $('status').textContent='등록 완료!\n홈페이지에 반영되기까지 잠시 걸릴 수 있습니다.';
+  $('title').value='';$('before').value='';$('after').value='';
+ }catch(e){$('status').textContent='오류가 발생했습니다.\n'+e.message}
+ finally{$('save').disabled=false}
+};
+function safe(s){return s.replace(/[^\w가-힣.\-]+/g,'_')}
+async function api(url,token,method,body){
+ return fetch(url,{method,headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'},body:body?JSON.stringify(body):undefined})
+}
+</script>
+</body></html>
