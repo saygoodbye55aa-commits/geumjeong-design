@@ -215,5 +215,314 @@ h2{
 
 .trust{
   display:grid;
-  grid-t
-... 
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+.trust div{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:18px 12px;
+  text-align:center
+}
+.trust b{display:block;margin-top:7px;font-weight:500}
+.trust small{color:var(--mute);font-weight:400}
+
+.contact{
+  margin:0 18px 25px;
+  border-radius:20px;
+  background:#2a241c;
+  color:#f7f3ec;
+  padding:26px 20px
+}
+.contact .label{
+  font-size:12px;
+  letter-spacing:.08em;
+  color:var(--gold-soft)
+}
+.contact .num{
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-size:28px;
+  font-weight:500;
+  margin:10px 0 8px
+}
+.contact p{color:#c9c0b4;font-size:13px;margin:0}
+.contact a{
+  display:block;
+  background:var(--gold);
+  color:#fff;
+  padding:14px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:500;
+  margin-top:18px
+}
+
+footer{
+  text-align:center;
+  color:#9a9186;
+  font-size:11px;
+  padding:6px 20px 22px;
+  line-height:1.7
+}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(520px,100%);
+  height:70px;
+  background:#fffdf8;
+  border-top:1px solid var(--line);
+  display:flex;
+  z-index:30
+}
+.bottom a{
+  flex:1;
+  text-align:center;
+  padding-top:11px;
+  font-size:11px;
+  font-weight:500;
+  color:var(--mute)
+}
+.bottom b{display:block;font-size:18px;color:var(--ink);margin-bottom:2px}
+.bottom .call{background:var(--gold);color:#fff}
+.bottom .call b{color:#fff}
+
+.side-menu{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:rgba(42,36,28,.45)
+}
+.side-menu.open{display:block}
+.side-inner{
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  width:min(390px,88%);
+  background:#fffdf8;
+  padding:70px 20px 30px;
+  overflow:auto
+}
+.close-menu{
+  position:absolute;
+  right:18px;
+  top:15px;
+  border:0;
+  background:none;
+  font-size:36px;
+  line-height:1;
+  color:var(--ink)
+}
+.menu-logo{
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-weight:500;
+  font-size:26px;
+  letter-spacing:.12em;
+  color:var(--gold)
+}
+.menu-sub{
+  font-size:13px;
+  color:var(--mute);
+  margin:8px 0 22px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:20px
+}
+.menu-info{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px;
+  margin:10px 0;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid var(--line)
+}
+.menu-info .mi{font-size:22px}
+.menu-info b{display:block;font-size:16px;font-weight:500}
+.menu-info small{
+  display:block;
+  color:var(--mute);
+  margin-top:5px;
+  font-size:13px
+}
+.menu-links{
+  border-top:1px solid var(--line);
+  margin-top:18px;
+  padding:8px 0
+}
+.menu-links a{
+  display:block;
+  padding:14px 4px;
+  font-weight:500
+}
+
+@media (min-width:768px){
+  .page{max-width:720px}
+  .bottom{width:min(720px,100%)}
+  .logo{font-size:26px}
+  .hero h1{font-size:42px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="logo-wrap">
+    <div class="logo-mark">
+      <div class="logo-line"><span class="logo-dia"></span></div>
+      <div class="logo">금정디자인</div>
+    </div>
+    <div class="head-sub">도배 · 도장 · 장판 · 누수복원 · 실내인테리어</div>
+  </div>
+  <button class="menu" onclick="openMenu()">☰</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="badge">부산 · 경남 시공 전문</div>
+  <h1>
+    공간에 가치를 더하는<br>
+    <span>금정디자인</span>
+  </h1>
+  <p>
+    도배부터 도장, 장판, 누수복원까지<br>
+    깔끔하고 꼼꼼하게 시공합니다.
+  </p>
+  <div class="cta">
+    <a class="btn dark" href="tel:0517117562">전화상담</a>
+    <a class="btn gold" href="sms:0517117562">문자상담</a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="eyebrow">SERVICE</div>
+  <h2>시공 서비스</h2>
+  <div class="services">
+    <div class="service">
+      <div class="ico">🏠</div>
+      <b>도배</b>
+      <small>벽지 교체 · 부분도배</small>
+    </div>
+    <div class="service">
+      <div class="ico">🎨</div>
+      <b>도장</b>
+      <small>수성 · 유성 · 실내도장</small>
+    </div>
+    <div class="service">
+      <div class="ico">🧱</div>
+      <b>장판</b>
+      <small>장판 교체 · 바닥 시공</small>
+    </div>
+    <div class="service">
+      <div class="ico">💧</div>
+      <b>누수복원</b>
+      <small>누수 흔적 복원 · 보수</small>
+    </div>
+    <div class="service">
+      <div class="ico">✨</div>
+      <b>실내인테리어</b>
+      <small>공간에 맞춘 종합 인테리어</small>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="eyebrow">PORTFOLIO</div>
+  <h2>시공 사례</h2>
+  <div class="photo-grid">
+    <figure class="photo-card">
+      <img src="20260920_104552.jpg" alt="도배시공 전">
+      <figcaption>도배시공 전</figcaption>
+    </figure>
+    <figure class="photo-card">
+      <img src="20260920_104556.jpg" alt="도배시공 전">
+      <figcaption>도배시공 전</figcaption>
+    </figure>
+    <figure class="photo-card">
+      <img src="20260921_174211.jpg" alt="도배시공 후">
+      <figcaption>도배시공 후</figcaption>
+    </figure>
+    <figure class="photo-card">
+      <img src="20260921_174230.jpg" alt="도배시공 후">
+      <figcaption>도배시공 후</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">WHY GEUMJEONG</div>
+  <h2>믿고 맡기는 시공</h2>
+  <div class="trust">
+    <div>✔️<b>꼼꼼한 시공</b><small>작은 부분까지 세심하게</small></div>
+    <div>🏆<b>현장 경험</b><small>다양한 시공 경험</small></div>
+    <div>📍<b>부산·경남</b><small>지역 출장 시공</small></div>
+    <div>💬<b>친절 상담</b><small>편하게 문의하세요</small></div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="label">견적 및 상담 문의</div>
+  <div class="num">051-711-7562</div>
+  <p>부산·경남 전지역 상담 가능합니다.</p>
+  <a href="tel:0517117562">전화로 상담하기</a>
+</div>
+</main>
+
+<footer>
+  금정디자인 · 대표 전정미<br>
+  부산시 금정구 수림로 61번길 1
+</footer>
+</div>
+
+<nav class="bottom">
+  <a href="#home"><b>⌂</b>홈</a>
+  <a href="#services"><b>▦</b>서비스</a>
+  <a href="#portfolio"><b>▧</b>시공사례</a>
+  <a class="call" href="tel:0517117562"><b>☎</b>견적문의</a>
+</nav>
+
+<div class="side-menu" id="sideMenu" onclick="closeMenu(event)">
+  <div class="side-inner" onclick="event.stopPropagation()">
+    <button class="close-menu" onclick="closeMenu()">×</button>
+    <div class="menu-logo">금정디자인</div>
+    <div class="menu-sub">부산·경남 인테리어 전문</div>
+    <a class="menu-info" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
+      <div class="mi">📍</div>
+      <div><b>주소</b><small>부산시 금정구 수림로 61번길 1</small></div>
+    </a>
+    <a class="menu-info" href="https://map.naver.com/p/search/부산시%20금정구%20수림로%2061번길%201" target="_blank">
+      <div class="mi">🗺️</div>
+      <div><b>지도에서 보기</b><small>네이버 지도로 위치 확인</small></div>
+    </a>
+    <a class="menu-info" href="tel:0517117562">
+      <div class="mi">📞</div>
+      <div><b>전화</b><small>051-711-7562</small></div>
+    </a>
+    <div class="menu-links">
+      <a href="#home" onclick="closeMenu()">홈</a>
+      <a href="#services" onclick="closeMenu()">시공 서비스</a>
+      <a href="#portfolio" onclick="closeMenu()">시공 사례</a>
+      <a href="#contact" onclick="closeMenu()">견적 및 상담</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeMenu(e){
+  if(e && e.target !== e.currentTarget){ return; }
+  document.getElementById("sideMenu").classList.remove("open");
+  document.body.style.overflow="";
+}
+</script>
+</body>
+</html>
