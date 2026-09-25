@@ -1,52 +1,219 @@
-from pathlib import Path
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>금정디자인 | 부산·경남 인테리어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#9a7438;
+  --gold-soft:#c4a36a;
+  --cream:#f7f3ec;
+  --cream-2:#fffdf8;
+  --ink:#2a241c;
+  --mute:#7a7268;
+  --line:#e6dccf;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#e8e2d8;
+  font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+  color:var(--ink);
+  font-weight:400;
+}
+a{text-decoration:none;color:inherit}
 
-p = Path("/mnt/data/index.html")
-s = p.read_text(encoding="utf-8")
+.page{
+  max-width:520px;
+  margin:auto;
+  background:var(--cream-2);
+  min-height:100vh;
+  padding-bottom:82px
+}
 
-start = s.find('<section class="section cases" id="cases">')
-end = s.find('<section class="section about">', start)
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,253,248,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  padding:12px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+.logo-wrap{display:flex;flex-direction:column;align-items:flex-start}
+.logo-mark{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:1
+}
+.logo-line{
+  width:100%;
+  height:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-bottom:5px
+}
+.logo-line:before,
+.logo-line:after{
+  content:"";
+  height:1px;
+  background:var(--gold);
+  flex:1
+}
+.logo-dia{
+  width:6px;
+  height:6px;
+  border:1px solid var(--gold);
+  transform:rotate(45deg)
+}
+.logo{
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-weight:500;
+  font-size:22px;
+  letter-spacing:.12em;
+  color:var(--gold)
+}
+.head-sub{
+  font-size:10px;
+  color:var(--mute);
+  margin-top:5px;
+  letter-spacing:.02em;
+  font-weight:400
+}
+.menu{
+  font-size:26px;
+  border:0;
+  background:none;
+  cursor:pointer;
+  color:var(--ink)
+}
 
-new_cases = '''<section class="section cases" id="cases">
-<h2 class="title">시공사례</h2>
-<p class="desc">금정디자인의 실제 시공 전·후 사진입니다.</p>
+.hero{
+  padding:38px 22px 34px;
+  background:linear-gradient(180deg,#f3eee4 0%,#fffdf8 100%)
+}
+.badge{
+  display:inline-block;
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  padding:7px 12px;
+  border-radius:99px;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.04em
+}
+.hero h1{
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-size:34px;
+  font-weight:500;
+  line-height:1.25;
+  letter-spacing:-.02em;
+  margin:18px 0 12px
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--mute);
+  font-weight:400
+}
+.cta{
+  display:flex;
+  gap:8px;
+  margin-top:24px
+}
+.btn{
+  flex:1;
+  padding:14px 8px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:500;
+  font-size:14px
+}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.gold{background:var(--gold);color:#fff}
 
-<div class="case">
-<div class="compare">
-<div class="pic">
-<img src="20260920_104552.jpg" alt="시공 전">
-<span class="tag">시공 전</span>
-</div>
-<div class="pic">
-<img src="20260921_174211.jpg" alt="시공 후">
-<span class="tag after">시공 후</span>
-</div>
-<span class="arrow">›</span>
-</div>
-</div>
+section{padding:32px 18px}
+.eyebrow{
+  font-size:11px;
+  color:var(--gold);
+  font-weight:500;
+  letter-spacing:.14em
+}
+h2{
+  font-family:"Noto Serif KR",Georgia,serif;
+  font-size:23px;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:8px 0 18px
+}
 
-<div class="case">
-<div class="compare">
-<div class="pic">
-<img src="20260920_104556.jpg" alt="시공 전">
-<span class="tag">시공 전</span>
-</div>
-<div class="pic">
-<img src="20260921_174230.jpg" alt="시공 후">
-<span class="tag after">시공 후</span>
-</div>
-<span class="arrow">›</span>
-</div>
-</div>
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px
+}
+.service{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:16px;
+  padding:18px 14px
+}
+.service:last-child{grid-column:span 2}
+.ico{font-size:22px}
+.service b{
+  display:block;
+  font-size:16px;
+  font-weight:500;
+  margin-top:8px
+}
+.service small{
+  display:block;
+  color:var(--mute);
+  margin-top:5px;
+  font-size:12px;
+  font-weight:400
+}
 
-</section>
+.portfolio{background:var(--cream)}
+.photo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+.photo-card{
+  margin:0;
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--line)
+}
+.photo-card img{
+  display:block;
+  width:100%;
+  height:150px;
+  object-fit:cover
+}
+.photo-card figcaption{
+  padding:9px 11px;
+  font-size:12px;
+  font-weight:500;
+  color:var(--mute)
+}
 
-'''
-if start == -1 or end == -1:
-    raise RuntimeError("시공사례 구간을 찾지 못했습니다.")
-
-s = s[:start] + new_cases + s[end:]
-
-# Remove unused category/filter styling doesn't affect anything, but leave CSS harmlessly.
-out = Path("/mnt/data/index.html")
-out.write_text(s, encoding="utf-8")
-print(out)
+.trust{
+  display:grid;
+  grid-t
+... 
